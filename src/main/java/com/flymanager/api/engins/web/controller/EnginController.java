@@ -8,6 +8,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.net.URI;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -31,6 +32,9 @@ public class EnginController {
 	//Create engin
 	@PostMapping(value = "/engins")
 	public ResponseEntity<Void> createEngin(@RequestBody Engin engin) {
+		engin.setCreationDate(new Date());
+		engin.setModificationDate(engin.getCreationDate());
+
 		Engin enginCreated = enginRepository.save(engin);
 		if (enginCreated == null)
 			return ResponseEntity.noContent().build();
@@ -46,6 +50,8 @@ public class EnginController {
 	//Update engin
 	@PutMapping(value = "/engins")
 	public ResponseEntity<Void> updateEngin(@RequestBody Engin engin) {
+		engin.setModificationDate(new Date());
+
 		Engin enginUpdated = enginRepository.save(engin);
 		if (enginUpdated == null)
 			return ResponseEntity.noContent().build();
