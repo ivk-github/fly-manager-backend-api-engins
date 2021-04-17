@@ -24,6 +24,23 @@ public class Engin {
 	private Date modificationDate;
 	private int modificationUser;
 
+	public Engin() {
+	}
+
+	public Engin(int id, String registrationNumber, String type, String brand, String model, int available, double hourlyRate, Date creationDate, int creationUser, Date modificationDate, int modificationUser) {
+		this.id = id;
+		this.registrationNumber = registrationNumber;
+		this.type = type;
+		this.brand = brand;
+		this.model = model;
+		this.available = available;
+		this.hourlyRate = hourlyRate;
+		this.creationDate = creationDate;
+		this.creationUser = creationUser;
+		this.modificationDate = modificationDate;
+		this.modificationUser = modificationUser;
+	}
+
 	public Engin(int id, String registrationNumber, String type) {
 		this.id = id;
 		this.registrationNumber = registrationNumber;
