@@ -7,4 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 @Repository
 public interface EnginRepository extends JpaRepository<Engin, Integer> {
+
+	Engin findById(int id);
 }
