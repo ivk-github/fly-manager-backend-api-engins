@@ -2,9 +2,17 @@ package com.flymanager.api.engins.model;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+
+@Entity
 public class Engin {
 
+	@Id
+	@GeneratedValue
 	private int id;
+
 	private String registrationNumber;
 	private String type;
 	private String brand;
