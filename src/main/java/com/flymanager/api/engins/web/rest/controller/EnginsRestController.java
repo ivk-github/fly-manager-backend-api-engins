@@ -1,4 +1,4 @@
-package com.flymanager.api.engins.web.controller;
+package com.flymanager.api.engins.web.rest.controller;
 
 import com.flymanager.api.engins.model.Engin;
 import com.flymanager.api.engins.dao.repository.EnginRepository;
@@ -15,7 +15,7 @@ import java.util.List;
 
 @Api(tags = "Engins")
 @RestController
-public class EnginController {
+public class EnginsRestController {
 
 	@Autowired
 	private EnginRepository enginRepository;
