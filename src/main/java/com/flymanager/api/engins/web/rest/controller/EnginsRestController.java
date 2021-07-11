@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
-
+import javax.annotation.security.RolesAllowed;
 import java.net.URI;
 import java.util.Date;
 import java.util.List;
@@ -34,6 +34,7 @@ public class EnginsRestController {
 
 	@ApiOperation(value = "Create an engin")
 	@PostMapping(value = "/engins")
+	@RolesAllowed({"INTEGRATOR", "ADMIN"})
 	public ResponseEntity<Void> createEngin(@RequestBody Engin engin) {
 		engin.setCreationDate(new Date());
 		engin.setModificationDate(engin.getCreationDate());
@@ -52,6 +53,7 @@ public class EnginsRestController {
 
 	@ApiOperation(value = "Update an engin")
 	@PutMapping(value = "/engins")
+	@RolesAllowed({"INTEGRATOR", "ADMIN"})
 	public ResponseEntity<Void> updateEngin(@RequestBody Engin engin) {
 		engin.setModificationDate(new Date());
 
@@ -64,6 +66,7 @@ public class EnginsRestController {
 
 	@ApiOperation(value = "Delete an engin")
 	@DeleteMapping (value = "/engins")
+	@RolesAllowed({"INTEGRATOR", "ADMIN"})
 	public void deleteEngin(@RequestBody Engin engin) {
 		enginRepository.delete(engin);
 	}
