@@ -11,9 +11,9 @@ import java.util.Date;
 @ControllerAdvice
 public class CustomGlobalExceptionHandler {
 
-	@ExceptionHandler(EnginNotFoundException.class)
+	@ExceptionHandler(ResourceNotFoundException.class)
 	public ResponseEntity<Object> handleEnginNotFoundException(
-			EnginNotFoundException exception,
+			ResourceNotFoundException exception,
 			WebRequest request) {
 		HttpStatus httpStatus = HttpStatus.NOT_FOUND;
 
