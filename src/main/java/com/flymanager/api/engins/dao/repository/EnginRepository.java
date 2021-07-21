@@ -5,8 +5,11 @@ import com.flymanager.api.engins.model.Engin;
 import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.Optional;
+
 @Repository
 public interface EnginRepository extends JpaRepository<Engin, Integer> {
 
-	Engin findById(int id);
+	Optional<Engin> findById(int id);
+	void deleteById(int id);
 }
