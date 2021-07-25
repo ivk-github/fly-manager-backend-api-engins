@@ -4,6 +4,7 @@ import com.flymanager.api.engins.model.Engin;
 import com.flymanager.api.engins.service.EnginService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +19,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/engins")
 @RefreshScope
+@Slf4j
 public class EnginsRestController {
 
 	@Autowired
@@ -26,6 +28,7 @@ public class EnginsRestController {
 	@ApiOperation(value = "Retrieve the engins list")
 	@GetMapping
 	public ResponseEntity<List<Engin>> getEnginsList() {
+		log.info("Get engins list");
 		List<Engin> engins = enginService.getEnginsList();
 	//	return new ResponseEntity<>(engins, HttpStatus.OK);
 		return ResponseEntity.ok().body(engins);
