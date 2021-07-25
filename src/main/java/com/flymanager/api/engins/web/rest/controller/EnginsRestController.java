@@ -4,6 +4,7 @@ import com.flymanager.api.engins.model.Engin;
 import com.flymanager.api.engins.service.EnginService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +17,7 @@ import java.util.List;
 @Api(tags = "Engins")
 @RestController
 @RequestMapping("/engins")
+@RefreshScope
 public class EnginsRestController {
 
 	@Autowired
