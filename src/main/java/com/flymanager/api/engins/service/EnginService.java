@@ -3,6 +3,7 @@ package com.flymanager.api.engins.service;
 import com.flymanager.api.engins.dao.repository.EnginRepository;
 import com.flymanager.api.engins.exception.ResourceNotFoundException;
 import com.flymanager.api.engins.model.Engin;
+import com.flymanager.api.engins.util.Translator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +22,11 @@ public class EnginService {
 
 	public Engin getEnginById(int id) {
 		return enginRepository.findById(id)
-				.orElseThrow(() -> new ResourceNotFoundException("Engin [" + id +"] doesn't exist"));
+//				.orElseThrow(() -> new ResourceNotFoundException("Engin [" + id +"] doesn't exist"));
+				.orElseThrow(() -> new ResourceNotFoundException(
+						Translator.translate(
+							"com.flymanager.api.exception.NotFound.message",
+								new Object[]{id})));
 	}
 
 	public Engin createEngin(Engin engin) {
