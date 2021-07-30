@@ -8,8 +8,8 @@ import com.flymanager.api.engins.mapper.EnginMapper;
 import com.flymanager.api.engins.model.Engin;
 import com.flymanager.api.engins.util.Translator;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
