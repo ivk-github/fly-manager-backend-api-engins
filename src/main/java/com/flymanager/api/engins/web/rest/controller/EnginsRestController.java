@@ -15,11 +15,11 @@ import javax.annotation.security.RolesAllowed;
 import java.net.URI;
 import java.util.List;
 
+@Slf4j
 @Api(tags = "Engins")
 @RestController
 @RequestMapping("/engins")
 @RefreshScope
-@Slf4j
 public class EnginsRestController {
 
 	@Autowired
